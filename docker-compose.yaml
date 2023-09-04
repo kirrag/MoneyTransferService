@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  moneytransfer:
+    image: 'moneytransfer:1.0'
+    ports:
+      - '5500:5500'
+    environment:
+      INST_NUM: 1
+

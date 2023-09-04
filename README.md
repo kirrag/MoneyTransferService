@@ -108,4 +108,3 @@ GET:
 http://localhost:5500/cards/0000000000000002
 
 
-# MoneyTransferService
