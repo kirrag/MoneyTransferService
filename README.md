@@ -55,16 +55,24 @@
 # Описание реализации
 ## Команды запуска:
 
+```
+	
 mvn spring-boot:run
 tail -f logs/spring.log
-
+```
+	
+```
+	
 docker start moneytransfer
 docker exec -it moneytransfer /bin/sh
 tail -f logs/spring.log
-
+```
+```
+	
 docker-compose up
 docker exec -it moneytransferservice_moneytransfer_1 /bin/sh
 tail -f logs/spring.log
+```
 
 ## Порт: 5500
 
@@ -72,25 +80,33 @@ tail -f logs/spring.log
 
 При старте создаются две карты:
 
+```
+	
 {
 	CardNumber: '0000000000000001', 
 	validTill: '01/24',
 	cvv: '101'
 	Amount: { value: 1000000, type: 'RUB'}
 }
-
+```
+	
+```
+	
 {
 	CardNumber: '0000000000000002', 
 	validTill= '02/24',
 	cvv: '102'
 	Amount: {value: 2000000, type: 'RUB'}
 }
+```
 
 
 ### Запросы для тестов:
 
 #### Провести транзакцию:
 
+```
+	
 POST:
 {
     "cardFromNumber": "0000000000000001",
@@ -100,11 +116,15 @@ POST:
     "amount": {"value": 100000, "type": "RUB"}
 }
 
+```
+
 #### Запросить состояние карт:
+```
+	
 GET:
 http://localhost:5500/cards/0000000000000001
 
 GET:
 http://localhost:5500/cards/0000000000000002
-
+```
 
